@@ -1,12 +1,6 @@
-# 🚀 Desafio de lançamento do curso de Angular na Rocketseat
+# 🚀 Desafio Gestão Marketplace Angular
 
-### ⚠️ **Instruções Importantes**
 
-- A branch **`01-layout-completo`** deve ser utilizada por quem deseja **iniciar o desafio do zero**, acompanhando os conteúdos e evoluindo o projeto passo a passo.  
-
-- A branch **`main`** contém o projeto **finalizado**, de acordo com o que foi desenvolvido nos vídeos do desafio.  
-
----
 
 ### 📂 Descrição do Projeto
 
