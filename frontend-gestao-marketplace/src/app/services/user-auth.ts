@@ -7,6 +7,10 @@ export class UserAuthService {
   getUserToken(){
     // TODO: Recuperar token do localstorage
 
-    return 'token';
+    return localStorage.getItem('auth-token') || '';
+  }
+
+  setUserToken(token: string){
+    localStorage.setItem('auth-token', token);
   }
 }
