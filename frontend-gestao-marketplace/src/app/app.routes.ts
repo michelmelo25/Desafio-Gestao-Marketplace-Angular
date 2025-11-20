@@ -3,6 +3,7 @@ import { Login } from './pages/login/login';
 import { Products } from './pages/products/products';
 import { Layout } from './pages/products/layout/layout';
 import { NewProduct } from './pages/new-product/new-product';
+import { authGuard } from './pages/guards/auth-guards';
 
 export const routes: Routes = [
     {
@@ -17,6 +18,7 @@ export const routes: Routes = [
     {
         path: '',
         component: Layout,
+        canActivateChild: [authGuard],
         children: [
             {
                 path: 'products',
