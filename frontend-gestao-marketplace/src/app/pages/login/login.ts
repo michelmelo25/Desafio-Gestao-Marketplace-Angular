@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { UserService } from '../../services/user';
 import { UserAuthService } from '../../services/user-auth';
 import { Router } from '@angular/router';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,7 @@ export class Login {
 
     this._userService.login(
       this.userForm.get('email')?.value as string, 
-      this.userForm.get('password')?.value as string).subscribe({
+      this.userForm.get('password')?.value as string).pipe(take(1)).subscribe({
         next: (response) => {
           this.loginErrorMessage = '';
           this._userAuthService.setUserToken(response.data.token);
