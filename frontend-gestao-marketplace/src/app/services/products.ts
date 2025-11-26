@@ -3,14 +3,19 @@ import { inject, Injectable } from '@angular/core';
 import { INewProductRequest } from '../interfaces/new-product-request';
 import { INewProductResponse } from '../interfaces/new-product-response';
 import { Observable } from 'rxjs';
+import { IProductsResponse } from '../interfaces/products-response';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductsService {
   private readonly _httpClient = inject(HttpClient);
 
-  saveProduct(prouct: INewProductRequest): Observable<INewProductResponse>{
+  saveProduct(prouct: INewProductRequest): Observable<INewProductResponse> {
     return this._httpClient.post<INewProductResponse>('http://localhost:3000/api/products', prouct);
+  }
+
+  getProducts(): Observable<IProductsResponse> {
+    return this._httpClient.get<IProductsResponse>('http://localhost:3000/api/products');
   }
 }
